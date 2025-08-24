@@ -21,7 +21,7 @@ function VerifyEmailPage() {
     async function verify() {
       try {
         const res = await fetch(
-          `http://localhost:5000/auth/verify-email?token=${token}`
+          `https://eventify-wwfb.onrender.com/auth/verify-email?token=${token}`
         );
         const data = await res.json();
 
