@@ -23,9 +23,12 @@ const FaqChatbot = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5000/faqs/chat", {
-        message: input,
-      });
+      const response = await axios.post(
+        "https://eventify-wwfb.onrender.com/faqs/chat",
+        {
+          message: input,
+        }
+      );
       const answers = response.data.answers;
 
       if (answers && answers.length > 0) {
