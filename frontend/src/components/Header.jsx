@@ -50,7 +50,7 @@ export default function Header() {
 
   return (
     <>
-      {/* keep header above page content */}
+
       <header className="py-4 px-4 md:px-8 relative z-40">
         <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-white via-indigo-50/30 to-purple-50/30" />
 
@@ -81,10 +81,7 @@ export default function Header() {
               </svg>
             </button>
 
-            <a
-              href="#"
-              className="flex items-center gap-3 font-extrabold tracking-tight"
-            >
+            <a href="/" className="flex items-center gap-3 font-extrabold tracking-tight">
               <span className="relative inline-flex">
                 <img
                   src={Logo}
