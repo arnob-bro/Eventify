@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default class AuthService {
-  constructor(baseURL = "http://localhost:5000/auth") {
+  constructor(baseURL = "https://eventify-wwfb.onrender.com/auth") {
     this.api = axios.create({ baseURL });
   }
 
