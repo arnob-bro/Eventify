@@ -1,34 +1,45 @@
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 // Public pages
-import Home from "./pages/Home/Home";
-import Events from "./pages/Events/Events";
-import EventDetails from "./pages/EventDetails/EventDetails";
+import Footer from "./components/Footer/Footer";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import ContactUs from "./pages/ContactUs/ContactUs";
+
+import EventDetails from "./pages/EventDetails/EventDetails";
+import Events from "./pages/Events/Events";
+import Home from "./pages/Home/Home";
+
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import VerifyEmailPage from "./pages/VerifyEmailPage/VerifyEmailPage";
+
 
 // Auth pages
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
 
 // Student pages
-import StudentDashboard from "./pages/Student/StudentDashboard";
 import MyEvents from "./pages/Student/MyEvents";
+import StudentDashboard from "./pages/Student/StudentDashboard";
 import StudentProfile from "./pages/Student/StudentProfile";
 
 // Admin pages
 import AdminDashboard from "./pages/Admin/AdminDashboard";
-import ManageEvents from "./pages/Admin/ManageEvents";
+import Analytics from "./pages/Admin/Analytics";
 import CreateEvent from "./pages/Admin/CreateEvent";
 import EditEvent from "./pages/Admin/EditEvent";
-import Analytics from "./pages/Admin/Analytics";
+import ManageEvents from "./pages/Admin/ManageEvents";
 
 // Components
+
+import Header from "./components/Header";
+import Banner from "./components/Banner";
+import NewsLetter from "./components/NewsLetter";
+
+
 // import ProtectedRoute from "./components/PermissionComponents/ProtectedRoute";
+
 
 // 404 page (fallback)
 const NotFound = () => (
@@ -43,10 +54,12 @@ const NotFound = () => (
 // Layout for public pages
 const MainLayout = () => (
   <>
-    <Navbar />
+    <Header />
+
     <main className="app-content">
       <Outlet /> {/* nested public routes thakbe */}
     </main>
+
     <Footer />
   </>
 );
