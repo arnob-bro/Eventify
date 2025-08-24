@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/Logo/frame.svg";
 import Navbar from "./Navbar/Navbar";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   // Simple auth + role persisted in localStorage
   const [isAuthed, setIsAuthed] = useState(
@@ -15,11 +16,12 @@ export default function Header() {
   );
 
   const login = () => {
-    setIsAuthed(true);
-    localStorage.setItem("authed", "1");
+    navigate("/login");
+    // setIsAuthed(true);
+    // localStorage.setItem("authed", "1");
   };
   const logout = () => {
-    setIsAuthed(false);
+    // setIsAuthed(false);
     localStorage.removeItem("authed");
   };
   const handleRoleChange = (next) => {
